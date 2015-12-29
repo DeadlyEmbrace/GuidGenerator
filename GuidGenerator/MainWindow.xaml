@@ -1,0 +1,15 @@
+﻿<Window x:Class="GuidGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Guid Generator" Height="108" Width="270" d:DataContext="{ d:DesignData }" ResizeMode="NoResize" Icon="Key-Hash.png">
+    <Grid>
+        <Button Command="{Binding Path=CreateNewCommand}" Content="New Guid" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Command="{Binding Path=CopyCommand}" Content="Copy" HorizontalAlignment="Left" Margin="90,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Command="{Binding Path=CopyNewCommand}" Content="Copy New" HorizontalAlignment="Left" Margin="170,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label  Content="{Binding Path=CurrentGuid}" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="235"/>
+
+    </Grid>
+</Window>
