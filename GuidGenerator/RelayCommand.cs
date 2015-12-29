@@ -6,15 +6,18 @@ namespace GuidGenerator
 {
     public class RelayCommand : ICommand
     {
-        #region Fields 
-        readonly Action<object> _execute;
-        readonly Predicate<object> _canExecute;
-        #endregion
-        // Fields
+        #region Fields
 
-        #region Constructors 
+        private readonly Action<object> _execute;
+        private readonly Predicate<object> _canExecute;
 
-        public RelayCommand(Action<object> execute) : this(execute, null) { }
+        #endregion Fields
+
+        #region Constructors
+
+        public RelayCommand(Action<object> execute) : this(execute, null)
+        {
+        }
 
         public RelayCommand(Action<object> execute, Predicate<object> canExecute)
         {
@@ -22,9 +25,9 @@ namespace GuidGenerator
             _execute = execute; _canExecute = canExecute;
         }
 
-        #endregion
-        // Constructors 
-        #region ICommand Members 
+        #endregion Constructors
+
+        #region ICommand Members
 
         [DebuggerStepThrough]
         public bool CanExecute(object parameter)
@@ -48,7 +51,7 @@ namespace GuidGenerator
         {
             _execute(parameter);
         }
-        #endregion
-        // ICommand Members 
+
+        #endregion ICommand Members
     }
 }
